@@ -1,0 +1,7 @@
+name: implement-mcp-server-tools
+status: in_progress
+created: 2026-04-21
+artifacts:
+  - proposal.md
+  - design.md
+  - tasks.md
