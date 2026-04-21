@@ -156,9 +156,27 @@ Add to your `~/.config/opencode/config.json` (or project-level `opencode.json`):
 {
   "mcp": {
     "frontend-review": {
-      "command": "node",
-      "args": ["/absolute/path/to/frontend-review-mcp/dist/index.js"],
-      "type": "stdio"
+      "type": "local",
+      "command": ["/path/to/node", "/path/to/frontend-review-mcp/dist/index.js"],
+      "enabled": true
+    }
+  }
+}
+```
+
+> **Note:** `command` is an array — the first element is the absolute path to the `node` binary, the second is the absolute path to `dist/index.js`. Using absolute paths avoids issues with different Node.js versions or nvm environments.
+>
+> To find your node path: `which node` (or `nvm which current` if using nvm).
+
+Example with nvm:
+
+```json
+{
+  "mcp": {
+    "frontend-review": {
+      "type": "local",
+      "command": ["/root/.nvm/versions/node/v22.22.2/bin/node", "/www/Mcps/frontend-review-mcp/dist/index.js"],
+      "enabled": true
     }
   }
 }
